@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Богдан Володимирович Кулик — психіатр, психотерапевт</title>
+  <meta name="description" content="Сайт-візитка лікаря-психіатра Богдана Володимировича Кулика: психіатрія, психотерапевтичний супровід, акупунктура, наукові статті, інтерв’ю та контакти." />
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #f1f5f9;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #0f766e;
+      --accent-2: #0369a1;
+      --dark: #0f172a;
+      --dark-soft: #1e293b;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section { padding: 72px 0; }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      margin: 10px 0 0;
+    }
+    .eyebrow {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .brand strong { font-size: 18px; }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .nav a:hover { color: var(--text); }
+
+    .hero {
+      background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 45%, #ecfdf5 100%);
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      padding: 72px 0 84px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.05;
+      margin: 18px 0 0;
+    }
+    .hero .subtitle {
+      font-size: clamp(20px, 2.4vw, 28px);
+      color: var(--dark-soft);
+      margin: 18px 0 0;
+    }
+    .hero .summary {
+      max-width: 720px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 18px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--dark);
+      color: var(--white);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.16);
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--text);
+      border-color: #cbd5e1;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+    }
+    .hero-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+    .hero-card-body { padding: 24px; }
+    .hero-card-body .city {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .hero-card-body h3 {
+      margin: 10px 0 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .hero-card-body p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .cards-2, .cards-3 {
+      display: grid;
+      gap: 18px;
+    }
+    .cards-2 { grid-template-columns: repeat(2, 1fr); }
+    .cards-3 { grid-template-columns: repeat(3, 1fr); }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .card.soft { background: var(--surface-soft); }
+    .card h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .dark-block {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 32px;
+      padding: 42px;
+    }
+    .dark-block .eyebrow { color: #bae6fd; }
+    .dark-block .lead { color: #cbd5e1; }
+    .issues {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .issue {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: #f8fafc;
+      border-radius: 18px;
+      padding: 13px 16px;
+      font-size: 15px;
+    }
+
+    .pub-list, .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .pub-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+    }
+    .pub-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .pub-item strong { font-size: 19px; }
+
+    .media-card {
+      overflow: hidden;
+      padding: 0;
+    }
+    .media-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .media-card .content { padding: 24px; }
+    .media-card small {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    .media-card h3 {
+      margin: 10px 0 0;
+      font-size: 24px;
+    }
+    .media-card .btn { margin-top: 18px; }
+
+    .reviews .card {
+      position: relative;
+      padding-top: 30px;
+    }
+    .quote-mark {
+      position: absolute;
+      top: 12px;
+      left: 18px;
+      font-size: 48px;
+      line-height: 1;
+      color: #bae6fd;
+    }
+
+    .contacts-section {
+      background: var(--dark);
+      color: var(--white);
+    }
+    .contacts-section .lead,
+    .contacts-section .contact-list,
+    .contacts-section p,
+    .contacts-section label {
+      color: #cbd5e1;
+    }
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 26px;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 28px;
+      padding: 28px;
+    }
+    .contact-list p { margin: 0; }
+    .contact-list strong { color: var(--white); }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+    }
+    form { display: grid; gap: 14px; }
+    input, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 14px 15px;
+      font: inherit;
+    }
+    input::placeholder, textarea::placeholder { color: #94a3b8; }
+    iframe {
+      width: 100%;
+      min-height: 380px;
+      border: 0;
+      border-radius: 24px;
+    }
+
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      padding: 24px 0;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .contacts-grid,
+      .form-grid,
+      .cards-3 {
+        grid-template-columns: 1fr;
+      }
+      .cards-2,
+      .issues {
+        grid-template-columns: 1fr;
+      }
+      .hero-card img { height: 360px; }
+    }
+
+    @media (max-width: 720px) {
+      .nav { display: none; }
+      .section { padding: 56px 0; }
+      .hero-grid { padding: 56px 0 64px; }
+      .dark-block,
+      .card,
+      .contact-card { padding: 22px; }
+      .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <small>Сайт-візитка лікаря</small>
+        <strong>Богдан Володимирович Кулик</strong>
+      </div>
+      <nav class="nav">
+        <a href="#about">Про лікаря</a>
+        <a href="#services">Напрями</a>
+        <a href="#publications">Статті</a>
+        <a href="#media">Інтерв’ю</a>
+        <a href="#reviews">Відгуки</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Психіатр • Психотерапевтичний супровід • Акупунктура</div>
+        <h1>Богдан Володимирович Кулик</h1>
+        <div class="subtitle">Психіатр, психотерапевт, фахівець із комплексного підходу до психічного здоров’я</div>
+        <p class="summary">
+          Кандидат медичних наук, доцент кафедри психіатрії, психології та сексології. Професійна допомога при тривожних станах, порушеннях сну, кризових переживаннях та інших психоемоційних труднощах.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacts">Записатися на консультацію</a>
+          <a class="btn btn-secondary" href="#about">Дізнатися більше</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80" alt="Портрет лікаря" />
+        <div class="hero-card-body">
+          <div class="city">Львів</div>
+          <h3>Спокійний, уважний і професійний підхід</h3>
+          <p>Індивідуальний підбір допомоги, конфіденційність і повага до людини на кожному етапі консультації.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container grid-2">
+      <div>
+        <p class="eyebrow">Про лікаря</p>
+        <h2 class="section-title">Поєднання клінічного досвіду та наукового підходу</h2>
+        <p class="lead">
+          Богдан Володимирович Кулик — лікар-психіатр, психотерапевт, кандидат медичних наук. У своїй роботі приділяє увагу не лише симптомам, а й загальному психоемоційному стану людини.
+        </p>
+        <p class="lead">
+          Підхід до лікування ґрунтується на уважному ставленні до пацієнта, індивідуальному підборі допомоги та поєднанні сучасної психіатрії, психотерапевтичного супроводу і, за показаннями, додаткових методів підтримки.
+        </p>
+      </div>
+      <div class="cards-2">
+        <div class="card"><strong>Кандидат медичних наук</strong></div>
+        <div class="card"><strong>Науковий підхід у клінічній практиці</strong></div>
+        <div class="card"><strong>Наукова діяльність і професійний розвиток</strong></div>
+        <div class="card"><strong>Індивідуальний підхід до кожного пацієнта</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section" style="background:#fff;">
+    <div class="container">
+      <p class="eyebrow" style="color:var(--accent);">Напрями роботи</p>
+      <h2 class="section-title">Комплексна допомога у сфері психічного здоров’я</h2>
+      <div class="cards-3" style="margin-top:32px;">
+        <div class="card soft">
+          <h3>Психіатрія</h3>
+          <p>Діагностика, консультація та підбір сучасного медикаментозного лікування при психоемоційних і психічних розладах.</p>
+        </div>
+        <div class="card soft">
+          <h3>Психотерапевтичний супровід</h3>
+          <p>Робота з внутрішніми конфліктами, тривогою, кризовими станами, психологічним виснаженням та іншими складними переживаннями.</p>
+        </div>
+        <div class="card soft">
+          <h3>Акупунктура</h3>
+          <p>За наявності показань як частина комплексного підходу може застосовуватися допоміжний метод підтримки при тривожності, розладах сну та вегетативних порушеннях.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container dark-block">
+      <p class="eyebrow">З чим можна звернутися</p>
+      <h2 class="section-title">Коли варто звернутися по консультацію</h2>
+      <p class="lead">Якщо вам складно зрозуміти, чи варто звертатися саме зараз, консультація допоможе спокійно оцінити стан і визначити можливі подальші кроки.</p>
+      <div class="issues">
+        <div class="issue">Постійна тривога</div>
+        <div class="issue">Панічні атаки</div>
+        <div class="issue">Порушення сну</div>
+        <div class="issue">Емоційне виснаження</div>
+        <div class="issue">Фобії</div>
+        <div class="issue">Кризові стани</div>
+        <div class="issue">Іпохондричні переживання</div>
+        <div class="issue">Психоемоційні труднощі</div>
+        <div class="issue">Складні психічні стани</div>
+        <div class="issue">Сексологічні питання</div>
+        <div class="issue">Супровід при залежностях</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;">
+    <div class="container grid-2">
+      <div>
+        <p class="eyebrow">Підхід до лікування</p>
+        <h2 class="section-title">Уважна консультація, зрозумілі пояснення, індивідуальний план допомоги</h2>
+        <p class="lead">У роботі важливими є конфіденційність, повага до людини, уважне вислуховування та зрозуміле пояснення стану. План допомоги формується індивідуально і може включати психіатричну консультацію, медикаментозну підтримку, психотерапевтичний супровід, а також додаткові методи за наявності показань.</p>
+        <p class="lead">Основна мета — не лише зменшення симптомів, а й покращення якості життя, відновлення внутрішньої рівноваги та функціонування в повсякденному житті.</p>
+      </div>
+      <div class="cards-2" style="grid-template-columns:1fr;">
+        <div class="card soft"><strong>Уважна консультація</strong></div>
+        <div class="card soft"><strong>Індивідуальний підбір допомоги</strong></div>
+        <div class="card soft"><strong>Комплексний підхід</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" class="section">
+    <div class="container grid-2">
+      <div>
+        <p class="eyebrow" style="color:var(--accent);">Наукові публікації</p>
+        <h2 class="section-title">Вибрані наукові праці</h2>
+        <p class="lead">Серед наукових інтересів Богдана Володимировича Кулика — невротичні та тривожно-депресивні розлади, психофармакотерапія, психосоціальна реабілітація, кризові психоемоційні стани та суміжні питання психіатрії.</p>
+        <p class="lead">Нижче подано вибрані публікації. Посилання наразі тимчасові й можуть бути замінені на PDF, Google Scholar або сторінки журналів.</p>
+        <p class="lead" style="font-size:14px; margin-top:18px;">Усі посилання в цьому блоці тимчасові. Їх можна буде легко замінити на справжні адреси статей або PDF-файлів.</p>
+      </div>
+      <div class="pub-list">
+        <div class="pub-item"><small>Вибрана публікація</small><strong><a href="article-01.html">Сучасні методи терапії невротичних розладів за наявності іпохондричного синдрому</a></strong></div>
+        <div class="pub-item"><small>Вибрана публікація</small><strong><a href="article-02.html">Фармакологічні основи психосоціальної реабілітації та дестигматизації хворих на шизофренію</a></strong></div>
+        <div class="pub-item"><small>Вибрана публікація</small><strong><a href="article-03.html">Нові підходи до диференційної діагностики та терапії невротичних та неврозоподібних розладів</a></strong></div>
+        <div class="pub-item"><small>Вибрана публікація</small><strong><a href="article-04.html">Психоемоційні проблеми та невротизуючі фактори у жінок з психічними захворюваннями та шляхи їх подолання в умовах кризи</a></strong></div>
+        <div class="pub-item"><small>Вибрана публікація</small><strong><a href="article-05.html">Ефективність застосування антидепресанту подвійної дії венлафаксину для лікування депресивних розладів невротичного генезу</a></strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="all-publications" class="section" style="background:#fff;">
+    <div class="container">
+      <p class="eyebrow">Усі публікації</p>
+      <h2 class="section-title">Повний список вибраних матеріалів</h2>
+
+      <div class="pub-list" style="margin-top:32px;">
+        <div class="pub-item"><strong><a href="article-01.html">Сучасні методи терапії невротичних розладів за наявності іпохондричного синдрому</a></strong></div>
+        <div class="pub-item"><strong><a href="article-02.html">Фармакологічні основи психосоціальної реабілітації та дестигматизації хворих на шизофренію</a></strong></div>
+        <div class="pub-item"><strong><a href="article-03.html">Нові підходи до диференційної діагностики та терапії невротичних та неврозоподібних розладів</a></strong></div>
+        <div class="pub-item"><strong><a href="article-04.html">Можливість диференційної діагност
+
+  <section id="media" class="section" style="background:#fff;">
+    <div class="container">
+      <p class="eyebrow">Інтерв’ю та медіа</p>
+      <h2 class="section-title">Публічні матеріали про психічне здоров’я</h2>
+      <p class="lead">Інтерв’ю та медіаматеріали допомагають простими словами пояснювати складні психоемоційні стани та робити професійну допомогу ближчою і зрозумілішою.</p>
+      <div class="cards-2" style="margin-top:32px;">
+        <article class="card media-card">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Ілюстрація до інтерв'ю" />
+          <div class="content">
+            <small>28 травня 2023</small>
+            <h3>Як зрозуміти, що з тобою чи рідними щось не так: поради практикуючого психіатра</h3>
+            <p>Інтерв’ю про тривожні сигнали психічного неблагополуччя, панічні стани, наслідки тривалого стресу та важливість своєчасного звернення до фахівця.</p>
+            <a class="btn btn-primary" href="https://kp.ua/ua/amp/a670351-jak-zrozumiti-shcho-z-toboju-chi-ridnimi-shchos-ne-tak-poradi-praktikujuchoho-psikhiatra" target="_blank" rel="noreferrer">Читати інтерв’ю</a>
+          </div>
+        </article>
+        <article class="card media-card">
+          <img src="https://images.unsplash.com/photo-1516549655669-df8ac330aba5?auto=format&fit=crop&w=1200&q=80" alt="Ілюстрація до інтерв'ю" />
+          <div class="content">
+            <small>20 лютого 2021</small>
+            <h3>40–50 сантиметрів від людини — інтимна зона</h3>
+            <p>Інтерв’ю про особистий простір, психологічні кордони, вплив тривоги та стресу на спілкування між людьми.</p>
+            <a class="btn btn-primary" href="https://rozmova.wordpress.com/2021/02/20/bohdan-kulyk-2/" target="_blank" rel="noreferrer">Читати інтерв’ю</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="section reviews">
+    <div class="container">
+      <p class="eyebrow" style="color:var(--accent);">Відгуки</p>
+      <h2 class="section-title">Кілька слів від пацієнтів</h2>
+      <div class="cards-3" style="margin-top:32px;">
+        <div class="card">
+          <div class="quote-mark">“</div>
+          <p>Уважний, спокійний і професійний підхід. Лікар допоміг зрозуміти мій стан і пояснив подальше лікування.</p>
+        </div>
+        <div class="card">
+          <div class="quote-mark">“</div>
+          <p>Було комфортно говорити, без осуду і тиску. Відчувається досвід і людяне ставлення.</p>
+        </div>
+        <div class="card">
+          <div class="quote-mark">“</div>
+          <p>Пояснює зрозуміло, уважно ставиться до деталей, викликає довіру.</p>
+        </div>
+      </div>
+      <p class="lead" style="font-size:14px; margin-top:18px;">Відгуки розміщуються за згодою пацієнтів або у знеособленому форматі.</p>
+    </div>
+  </section>
+
+  <section id="contacts" class="section contacts-section">
+    <div class="container contacts-grid">
+      <div class="contact-card">
+        <p class="eyebrow" style="color:#bae6fd;">Контакти</p>
+        <h2 class="section-title" style="margin-top:10px;">Запис на консультацію</h2>
+        <div class="contact-list">
+          <p><strong>Адреса:</strong> Львів, вул. Кульпарківська, 95</p>
+          <p><strong>Місце прийому:</strong> Львівська обласна клінічна психіатрична лікарня, кафедра психіатрії, психології та сексології</p>
+          <p><strong>Телефон:</strong> +38 (0XX) XXX-XX-XX</p>
+          <p><strong>Email:</strong> example@email.com</p>
+          <p><strong>Месенджери:</strong> Viber / Telegram / WhatsApp</p>
+          <p><strong>Години прийому:</strong> За попереднім записом</p>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="contact-card">
+          <h3 style="margin-top:0;">Форма запису</h3>
+          <form>
+            <input type="text" placeholder="Ім’я" />
+            <input type="tel" placeholder="Телефон" />
+            <textarea rows="5" placeholder="Коротке повідомлення"></textarea>
+            <button class="btn btn-secondary" type="button" style="background:#fff;">Надіслати</button>
+          </form>
+        </div>
+        <div>
+          <iframe title="Карта" src="https://www.google.com/maps?q=Львів%2C%20вул.%20Кульпарківська%2C%2095&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      Інформація на сайті має ознайомчий характер і не замінює очної консультації лікаря. У разі невідкладного стану або загрози собі чи іншим необхідно негайно звернутися по екстрену медичну допомогу.
+    </div>
+  </footer>
+</body>
+</html>
+
