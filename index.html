@@ -93,26 +93,36 @@
       color: var(--muted);
     }
     .nav a:hover { color: var(--text); }
-    .lang-switcher {
+    .header-right {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-left: 12px;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
-    .lang-btn {
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px;
       border: 1px solid var(--line);
       background: var(--surface);
-      color: var(--muted);
-      border-radius: 12px;
+      border-radius: 14px;
+    }
+    .lang-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
       padding: 8px 12px;
+      border-radius: 10px;
       font-size: 13px;
       font-weight: 700;
-      cursor: pointer;
+      color: var(--muted);
     }
-    .lang-btn.active {
+    .lang-link.active {
       background: var(--dark);
       color: var(--white);
-      border-color: var(--dark);
     }
 
     .hero {
@@ -406,47 +416,24 @@
   </style>
 </head>
 <body>
-  <script>
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-uk]').forEach((el) => {
-        const value = el.getAttribute('data-' + lang);
-        if (value !== null) {
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            el.placeholder = value;
-          } else {
-            el.innerHTML = value;
-          }
-        }
-      });
-
-      document.querySelectorAll('.lang-btn').forEach((btn) => {
-        btn.classList.toggle('active', btn.dataset.langBtn === lang);
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      setLanguage('uk');
-    });
-  </script>
   <header class="site-header">
     <div class="container">
       <div class="brand">
-        <small data-uk="Сайт-візитка лікаря" data-en="Doctor's profile website">Сайт-візитка лікаря</small>
-        <strong data-uk="Богдан Володимирович Кулик" data-en="Bohdan Volodymyrovych Kulyk">Богдан Володимирович Кулик</strong>
+        <small>Сайт-візитка лікаря</small>
+        <strong>Богдан Володимирович Кулик</strong>
       </div>
-      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:flex-end;">
+      <div class="header-right">
       <nav class="nav">
-        <a href="#about" data-uk="Про лікаря" data-en="About">Про лікаря</a>
-        <a href="#services" data-uk="Напрями" data-en="Services">Напрями</a>
-        <a href="#publications" data-uk="Статті" data-en="Publications">Статті</a>
-        <a href="#media" data-uk="Інтерв’ю" data-en="Media">Інтерв’ю</a>
-        <a href="#reviews" data-uk="Відгуки" data-en="Reviews">Відгуки</a>
-        <a href="#contacts" data-uk="Контакти" data-en="Contacts">Контакти</a>
+        <a href="#about">Про лікаря</a>
+        <a href="#services">Напрями</a>
+        <a href="#publications">Статті</a>
+        <a href="#media">Інтерв’ю</a>
+        <a href="#reviews">Відгуки</a>
+        <a href="#contacts">Контакти</a>
       </nav>
-      <div class="lang-switcher">
-        <button class="lang-btn active" data-lang-btn="uk" onclick="setLanguage('uk')">UA</button>
-        <button class="lang-btn" data-lang-btn="en" onclick="setLanguage('en')">EN</button>
+      <div class="lang-switcher" aria-label="Перемикач мови">
+        <a class="lang-link active" href="#" lang="uk">UA</a>
+        <a class="lang-link" href="#" lang="en">EN</a>
       </div>
       </div>
     </div>
@@ -455,8 +442,8 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="badge" data-uk="Психіатр • Психотерапевтичний супровід • Акупунктура" data-en="Psychiatrist • Psychotherapeutic support • Acupuncture">Психіатр • Психотерапевтичний супровід • Акупунктура</div>
-        <h1 data-uk="Богдан Володимирович Кулик" data-en="Boh
+        <div class="badge">Психіатр • Психотерапевтичний супровід • Акупунктура</div>
+        <h1>Богдан Володимирович Кулик</h1>
         <div class="subtitle">Психіатр, психотерапевт, фахівець із комплексного підходу до психічного здоров’я</div>
         <p class="summary">
           Кандидат медичних наук, доцент кафедри психіатрії, психології та сексології. Професійна допомога при тривожних станах, порушеннях сну, кризових переживаннях та інших психоемоційних труднощах.
@@ -731,5 +718,4 @@
   </footer>
 </body>
 </html>
-
 
