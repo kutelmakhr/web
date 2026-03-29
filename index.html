@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Богдан Володимирович Кулик — психіатр, психотерапевт</title>
-  <meta name="description" content="Інформаційна сторінка Богдана Володимировича Кулика: психіатрія, психотерапія, акупунктура, наукові публікації, конференції, сертифікація та медіа." />
+  <meta name="description" content="Інформаційна сторінка Богдана Володимировича Кулика: психіатрія, психотерапія, акупунктура, наукові публікації, конференції, медіа та контактна інформація." />
   <style>
     :root {
       --bg: #f7f8fa;
@@ -87,8 +87,6 @@
     }
     .card p { margin: 0; color: var(--muted); }
     .info-grid { display:grid; grid-template-columns: 1.05fr 0.95fr; gap: 28px; }
-    .list { margin: 0; padding-left: 20px; }
-    .list li { margin-bottom: 10px; color: var(--muted); }
     .article-list { display:grid; gap:14px; }
     .article-item {
       background: var(--surface); border:1px solid var(--line); border-radius: 16px; padding: 16px 18px; box-shadow: var(--shadow);
@@ -99,10 +97,28 @@
       background: var(--surface); border:1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow);
     }
     .simple-block p { color: var(--muted); margin-top:0; }
+    .review-item {
+      background: var(--surface); border:1px solid var(--line); border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow);
+      position: relative;
+    }
+    .review-item::before {
+      content: "“";
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      font-size: 40px;
+      color: #c7d2fe;
+      line-height: 1;
+    }
+    .review-item p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
     .contact-box {
       background: var(--dark); color: #fff; border-radius: 24px; padding: 30px;
     }
-    .contact-box p, .contact-box li { color: #d7dfeb; }
+    .contact-box p { color: #d7dfeb; }
     .phone { font-size: 28px; font-weight: 700; letter-spacing: 0.02em; color: #fff; }
     .footer {
       border-top:1px solid var(--line); background:#fff; color: var(--muted); font-size:14px; padding: 24px 0 36px;
@@ -132,9 +148,9 @@
       <nav class="nav">
         <a href="#about">Про лікаря</a>
         <a href="#publications">Публікації</a>
-        <a href="#certification">Сертифікація</a>
         <a href="#conferences">Конференції</a>
         <a href="#media">Медіа</a>
+        <a href="#reviews">Відгуки</a>
         <a href="#contacts">Контакти</a>
       </nav>
     </div>
@@ -144,14 +160,13 @@
     <div class="container hero-grid">
       <div class="portrait">
         <img src="doctor-photo.jpg" alt="Фотографія Богдана Володимировича Кулика" />
-        <div class="portrait-note">Богдан Володимирович Кулик<br><br><span style="display:block; font-size:14px; line-height:1.6; color:#475569;">Associate Professor of the Department of Psychiatry, Psychology and Sexology at Danylo Halytsky Lviv National Medical University. Bohdan Volodymyrovych Kulyk is a PhD in Medicine, psychiatrist, psychotherapist, and acupuncture specialist. His professional activity combines clinical practice, scientific work, participation in professional conferences, and expert media interviews.</span></div>
+        <div class="portrait-note">Богдан Володимирович Кулик<br><br><span style="display:block; font-size:14px; line-height:1.6; color:#475569;">Adiunkt Katedry Psychiatrii, Psychologii i Seksuologii Lwowskiego Narodowego Uniwersytetu Medycznego im. Danyła Halickiego. Bohdan Wołodymyrowycz Kulyk jest kandydatem nauk medycznych, psychiatrą, psychoterapeutą oraz specjalistą w zakresie akupunktury. Jego działalność zawodowa łączy praktykę kliniczną, pracę naukową, udział w konferencjach zawodowych oraz eksperckie wywiady medialne.</span></div>
       </div>
       <div class="intro-block">
         <div class="eyebrow">Основна інформація</div>
         <h1>Доцент кафедри психіатрії, психології та сексології Львівського національного медичного університету імені Данила Галицького</h1>
-        <p><strong>Богдан Володимирович Кулик</strong> — кандидат медичних наук, психіатр, психотерапевт, фахівець з акупунктури. Професійна діяльність поєднує клінічну практику, наукову роботу, участь у професійних конференціях та публічних фахових інтерв’ю.</p>
+        <p><strong>Богдан Володимирович Кулик</strong> — кандидат медичних наук, психіатр, психотерапевт, фахівець з акупунктури. Професійна діяльність поєднує клінічну практику, наукову роботу, участь у професійних конференціях та фахові медіаінтерв’ю.</p>
         <p>Основні напрями професійного інтересу: психіатрія, психотерапія, психофармакотерапія, акупунктура, тривожні та невротичні розлади, психоемоційні стани, психосоціальна реабілітація.</p>
-        
       </div>
     </div>
   </section>
@@ -162,7 +177,7 @@
         <div class="eyebrow">Про лікаря</div>
         <h2>Біографічна та професійна інформація</h2>
         <p>Богдан Володимирович Кулик працює у сфері психіатрії, психотерапії та суміжних клінічних напрямів. У науковій та професійній діяльності увага приділяється проблематиці невротичних і тривожно-депресивних розладів, психофармакотерапії, психосоціальної реабілітації, а також міждисциплінарним підходам у психічному здоров’ї.</p>
-        <p>Сторінка має інформаційний характер і призначена для узагальненого представлення професійного профілю, публікацій, сертифікації, участі в конференціях та медіаматеріалів.</p>
+        <p>Сторінка має інформаційний характер і призначена для узагальненого представлення професійного профілю, публікацій, участі в конференціях, медіаматеріалів та контактної інформації.</p>
       </div>
       <div class="cards-2">
         <div class="card">
@@ -179,7 +194,7 @@
         </div>
         <div class="card">
           <h3>Професійний профіль</h3>
-          <p>Наукові публікації, сертифікація, участь у конференціях та фахові медіаматеріали.</p>
+          <p>Наукові публікації, участь у конференціях та фахові медіаматеріали.</p>
         </div>
       </div>
     </div>
@@ -226,8 +241,6 @@
     </div>
   </section>
 
-  
-
   <section id="conferences" class="section">
     <div class="container info-grid">
       <div class="cards-2">
@@ -260,8 +273,22 @@
           </div>
           <div class="article-item">
             <strong><a href="https://wz.lviv.ua/interview/418735-koly-zrobliat-vsi-uzd-mrt-kt-vyrishuiut-shcho-im-porobleno-i-idut-likuvatysia-u-tserkvu-a-treba-do-psykhiatra" target="_blank" rel="noreferrer">«Коли зроблять всі УЗД, МРТ, КТ, вирішують, що їм „пороблено“, і йдуть лікуватися у церкву. А треба до психіатра…»</a></strong>
-            <p>Високий Замок, 19 серпня 2020 року. Матеріал присвячений психологічним наслідкам карантину, тривожним і психосоматичним станам та межам самолікування. ([wz.lviv.ua](https://wz.lviv.ua/interview/418735-koly-zrobliat-vsi-uzd-mrt-kt-vyrishuiut-shcho-im-porobleno-i-idut-likuvatysia-u-tserkvu-a-treba-do-psykhiatra))</p>
+            <p>Високий Замок, 19 серпня 2020 року.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="section">
+    <div class="container">
+      <div class="simple-block">
+        <div class="eyebrow">Відгуки</div>
+        <h2>Враження пацієнтів</h2>
+        <div class="cards-3" style="margin-top:20px;">
+          <div class="review-item"><p>Уважний, інтелігентний і дуже спокійний підхід. Консультація пройшла в атмосфері довіри, без тиску та поспіху.</p></div>
+          <div class="review-item"><p>Лікар уважно вислухав, пояснив стан зрозумілою мовою та допоміг краще зорієнтуватися у подальших кроках.</p></div>
+          <div class="review-item"><p>Відчувається поєднання професійного досвіду, наукового мислення і людяного ставлення до пацієнта.</p></div>
         </div>
       </div>
     </div>
